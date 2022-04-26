@@ -1,3 +1,4 @@
+import os
 import configparser
 config = configparser.RawConfigParser()
 config.read(filenames="config.properties")
@@ -10,4 +11,4 @@ openweather_api_url3 = "https://api.openweathermap.org/data/2.5/onecall?lat={lat
 twilio_sid = config.get("twilio.com", "twilio.api.sid")
 twilio_token = config.get("twilio.com", "twilio.api.token")
 
-my_phone_number = config.get("my-info", "phone.number.me")
+my_phone_number = os.getenv("phone.number.me")
